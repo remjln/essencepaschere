@@ -15,8 +15,7 @@ export class GasStationsGetterService {
     }
 
     formatAddressData(data: any): GeoCoordinates {
-        const obj = JSON.parse(data)
-        const boundingbox = obj[0].boundingbox;
+        const boundingbox = data[0].boundingbox;
         const latitude = boundingbox[0];
         const longitude = boundingbox[2];
         return {longitude, latitude};
@@ -25,24 +24,26 @@ export class GasStationsGetterService {
     requestStationData(gasType: string, position: GeoCoordinates, distance:number): Observable<any> {
         let url = FUEL_BASE_URL
             .replace('{0}', gasType)
-            .replace('{1}', position.longitude.toString())
-            .replace('{2}', position.latitude.toString())
+            .replace('{1}', position.latitude.toString())
+            .replace('{2}', position.longitude.toString())
             .replace('{3}', distance.toString());
+        console.log(url)
 
         return this.http.get(url);
     }
 
     formatStationData(data: any, fuel: string): GasStationData[] {
         const fuel_lower = fuel.toLowerCase();
-        const obj = JSON.parse(data)
-        const records = obj.records;
+        const records = data.records;
         let res : GasStationData[] = [];
 
         for (const r of records) {
-            let latitude = r.fields.latitude;
-            let longitude = r.fields.longitude;
-            let distance = r.fields.dist;
-            let price = r.fields[fuel_lower + "_prix"];
+            let latitude:number = r.fields.geom[0];
+            let longitude:number = r.fields.geom[1];
+
+            // The unary operator + converts a string to a number
+            let distance:number = +r.fields.dist;
+            let price:number = +r.fields[fuel_lower + "_prix"];
             res.push({longitude, latitude, distance, price});
         }
         return res;
