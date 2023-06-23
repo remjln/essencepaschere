@@ -1,6 +1,8 @@
 <section id="landing">
-    <app-sentence-input></app-sentence-input>
+    <app-sentence-input (addressEventEmitter)="addressInput($event)" (fuelTypeEventEmitter)="fuelSelect($event)"></app-sentence-input>
     <a id="caret" href="#results"></a>
 </section>
 <section id="results">
+    <app-sentence-input-header></app-sentence-input-header>
+    <app-results-handler [address]="address" [fuelType]="fuelType" *ngIf="showResults"></app-results-handler>
 </section>

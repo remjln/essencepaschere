@@ -3,7 +3,7 @@ import {Observable} from "rxjs";
 import {GasStationData} from "./gas-station-data";
 import {HttpClient} from "@angular/common/http";
 import {GeoCoordinates} from "./geo-coordinates";
-const FUEL_BASE_URL:string = 'https://data.economie.gouv.fr/api/records/1.0/search/?dataset=prix-des-carburants-en-france-flux-instantane-v2&q=&rows=-1&refine.carburants_disponibles={0}&geofilter.distance={1},{2},{3}';
+const FUEL_BASE_URL:string = 'https://data.economie.gouv.fr/api/records/1.0/search/?dataset=prix-des-carburants-en-france-flux-instantane-v2&q=&rows=10&refine.carburants_disponibles={0}&geofilter.distance={1},{2},50000';
 const ADDR_BASE_URL:string = 'https://nominatim.openstreetmap.org/search?q={0}&format=json';
 
 @Injectable()
@@ -21,12 +21,11 @@ export class GasStationsGetterService {
         return {longitude, latitude};
     }
 
-    requestStationData(gasType: string, position: GeoCoordinates, distance:number): Observable<any> {
+    requestStationData(gasType: string, position: GeoCoordinates): Observable<any> {
         let url = FUEL_BASE_URL
             .replace('{0}', gasType)
             .replace('{1}', position.latitude.toString())
             .replace('{2}', position.longitude.toString())
-            .replace('{3}', distance.toString());
         console.log(url)
 
         return this.http.get(url);
