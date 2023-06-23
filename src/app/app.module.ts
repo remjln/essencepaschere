@@ -9,6 +9,7 @@ import { SentenceInputComponent } from './sentence-input/sentence-input.componen
 import { SentenceInputHeaderComponent } from './sentence-input-header/sentence-input-header.component';
 import { MapResultsComponent } from './map-results/map-results.component';
 import { LeafletModule} from "@asymmetrik/ngx-leaflet";
+import { ResultsHandlerComponent } from './results-handler/results-handler.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { LeafletModule} from "@asymmetrik/ngx-leaflet";
     SentenceInputComponent,
     SentenceInputHeaderComponent,
     MapResultsComponent
+    ResultsHandlerComponent
   ],
   imports: [
     BrowserModule,
