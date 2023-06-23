@@ -44,7 +44,8 @@ export class GasStationsGetterService {
             // The unary operator + converts a string to a number
             let distance:number = +r.fields.dist;
             let price:number = +r.fields[fuel_lower + "_prix"];
-            res.push({longitude, latitude, distance, price});
+            let address:string = r.fields.adresse;
+            res.push({longitude, latitude, distance, price, address});
         }
         return res;
     }
