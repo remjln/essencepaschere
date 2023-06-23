@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ResultListComponent } from './result-list/result-list.component';
 import { ResultComponent } from './result/result.component';
+import { ResultElementComponent } from './result-element/result-element.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ResultListComponent,
-    ResultComponent
+    ResultComponent,
+    ResultElementComponent
   ],
   imports: [
     BrowserModule,
