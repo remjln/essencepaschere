@@ -5,12 +5,22 @@ app-sentence-input {
     transform: translate(-50%, -50%);
 }
 
+app-sentence-input-header {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 section {
     min-height: 100vh;
 }
 
 #landing {
     background: #e9ecef;
+}
+
+#result {
+    background: blue;
 }
 
 #caret {

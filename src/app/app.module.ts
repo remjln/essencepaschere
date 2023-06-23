@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ResultListComponent } from './result-list/result-list.component';
 import { ResultComponent } from './result/result.component';
 import { SentenceInputComponent } from './sentence-input/sentence-input.component';
+import { SentenceInputHeaderComponent } from './sentence-input-header/sentence-input-header.component';
 import { MapResultsComponent } from './map-results/map-results.component';
 import { LeafletModule} from "@asymmetrik/ngx-leaflet";
 
@@ -15,6 +16,7 @@ import { LeafletModule} from "@asymmetrik/ngx-leaflet";
     ResultListComponent,
     ResultComponent,
     SentenceInputComponent,
+    SentenceInputHeaderComponent,
     MapResultsComponent
   ],
   imports: [
