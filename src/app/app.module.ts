@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { ResultListComponent } from './result-list/result-list.component';
 import { ResultComponent } from './result/result.component';
 import { SentenceInputComponent } from './sentence-input/sentence-input.component';
+import { MapResultsComponent } from './map-results/map-results.component';
+import { LeafletModule} from "@asymmetrik/ngx-leaflet";
 
 @NgModule({
   declarations: [
     AppComponent,
     ResultListComponent,
     ResultComponent,
-    SentenceInputComponent
+    SentenceInputComponent,
+    MapResultsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LeafletModule
   ],
   providers: [],
   bootstrap: [AppComponent]
