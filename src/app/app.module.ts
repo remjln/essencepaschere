@@ -8,6 +8,7 @@ import { ResultComponent } from './result/result.component';
 import { SentenceInputComponent } from './sentence-input/sentence-input.component';
 import { MapResultsComponent } from './map-results/map-results.component';
 import { LeafletModule} from "@asymmetrik/ngx-leaflet";
+import { ResultsHandlerComponent } from './results-handler/results-handler.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { LeafletModule} from "@asymmetrik/ngx-leaflet";
     ResultListComponent,
     ResultComponent,
     SentenceInputComponent,
-    MapResultsComponent
+    MapResultsComponent,
+    ResultsHandlerComponent
   ],
   imports: [
     BrowserModule,
