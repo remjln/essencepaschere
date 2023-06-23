@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {GasStationData} from "../gas-station-data";
 
 @Component({
   selector: 'app-result-element',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
 })
 export class ResultElementComponent {
 
-  //@Imput() data:any;
+  // @ts-ignore
+  @Input() data: GasStationData;
 }

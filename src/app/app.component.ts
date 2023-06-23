@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +8,13 @@ import {Component} from '@angular/core';
 export class AppComponent {
   title = 'project';
   // @ts-ignore
-  fuelType: string;
+  fuelType: string = '';
   // @ts-ignore
-  address: string;
+  address: string = '';
   showResults = false;
 
   addressInput(address: string) {
-    this.address = address;
+    this.address = address.trim();
   }
 
   fuelSelect(fuelType: string) {
@@ -23,8 +23,5 @@ export class AppComponent {
 
   downCaretClick() {
     this.showResults = true;
-    const resultsSection = document.querySelector('#results');
-    if (resultsSection !== null)
-      window.scrollTo(0, resultsSection.getBoundingClientRect().top);
   }
 }

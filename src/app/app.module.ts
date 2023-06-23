@@ -15,16 +15,12 @@ import { ResultsHandlerComponent } from './results-handler/results-handler.compo
   declarations: [
     AppComponent,
     ResultListComponent,
-<<<<<<< HEAD
-    ResultComponent,
     SentenceInputComponent,
     SentenceInputHeaderComponent,
-    MapResultsComponent
-    ResultsHandlerComponent
-=======
+    MapResultsComponent,
+    ResultsHandlerComponent,
     ResultElementComponent,
     SentenceInputComponent
->>>>>>> StationList
   ],
   imports: [
     BrowserModule,

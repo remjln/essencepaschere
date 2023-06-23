@@ -1,10 +1,10 @@
-div{
+#sentenceInput div{
     /*border: solid 1px orange;*/
     display: inline-block;
     text-align: center;
 }
 
-h2 {
+#sentenceInput h2 {
     display: inline;
 
     font-family: Arial, sans-serif;
@@ -12,7 +12,7 @@ h2 {
     font-weight: normal;
 }
 
-#carburant {
+#sentenceInput #carburant {
     color: #00000050;
 
     border: none;
@@ -24,15 +24,15 @@ h2 {
     border-bottom: solid 2px #d62828;
 }
 
-#carburant option {
+#sentenceInput #carburant option {
     color: black;
 }
 
-#adresse::placeholder{
+#sentenceInput #adresse::placeholder{
     color: #00000050;
 }
 
-#adresse{
+#sentenceInput #adresse{
 
     border: none;
     background: none;

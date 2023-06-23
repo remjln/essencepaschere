@@ -1,8 +1,12 @@
-<section id="landing">
+<section id="landing" *ngIf="!showResults">
     <app-sentence-input (addressEventEmitter)="addressInput($event)" (fuelTypeEventEmitter)="fuelSelect($event)"></app-sentence-input>
-    <a id="caret" href="#results"></a>
+    <a *ngIf="fuelType !== '' && address !== ''" id="search" (click)="downCaretClick()">
+      <span class="caret"></span>
+      Chercher
+      <span class="caret"></span>
+    </a>
 </section>
-<section id="results">
-    <app-sentence-input-header></app-sentence-input-header>
-    <app-results-handler [address]="address" [fuelType]="fuelType" *ngIf="showResults"></app-results-handler>
+<section id="results" *ngIf="showResults">
+    <app-sentence-input-header [address]="address" [fuelType]="fuelType"></app-sentence-input-header>
+    <app-results-handler [address]="address" [fuelType]="fuelType" ></app-results-handler>
 </section>
