@@ -1,1 +1,3 @@
-<p>result-list works!</p>
+<ul *ngIf="results !== null">
+    <li *ngFor="let result of results"><app-result [data]="result"></app-result></li>
+</ul>

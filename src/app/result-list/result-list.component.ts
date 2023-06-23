@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Inject, Input} from '@angular/core';
+import {GasStationData} from "../gas-station-data";
 
 @Component({
   selector: 'app-result-list',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./result-list.component.css']
 })
 export class ResultListComponent {
+    @Input() results: any;
+
+
 
 }
