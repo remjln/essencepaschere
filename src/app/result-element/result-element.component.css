@@ -39,7 +39,8 @@ h3 {
 
 p {
   font-family: Arial, sans-serif;
-  font-size: small;
-  font-weight: lighter;
+  margin-top: 5px;
+  font-size: medium;
+  font-weight: 600;
   color: #00000070;
 }
