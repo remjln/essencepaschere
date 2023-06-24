@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SentenceInputComponent } from './sentence-input-header.component';
+import { SentenceInputHeaderComponent } from './sentence-input-header.component';
 
 describe('SentenceInputHeaderComponent', () => {
   let component: SentenceInputHeaderComponent;

@@ -9,8 +9,10 @@
         <option value="E10">E10</option>
         <option value="SP98">SP98</option>
     </select>
+    <h2 id="carburant-color" (change)="carburantSelect($event)"> ⬤</h2>
     <br>
     <h2>à </h2>
-    <input id="adresse" (input)="addressInput($event)" type="text" placeholder="Lyon..." size="15">
+    <div class="map-marker"></div>
+    <input id="adresse" (input)="addressInput($event)" type="text" placeholder="Lyon..." size="13">
 </div>
 

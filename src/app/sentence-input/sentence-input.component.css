@@ -1,4 +1,4 @@
-#sentenceInput div{
+div#sentenceInput{
     /*border: solid 1px orange;*/
     display: inline-block;
     text-align: center;
@@ -10,6 +10,10 @@
     font-family: Arial, sans-serif;
     font-size: 3em;
     font-weight: normal;
+}
+
+#sentenceInput #carburant-color {
+    color: #00000050;
 }
 
 #sentenceInput #carburant {
@@ -26,6 +30,30 @@
 
 #sentenceInput #carburant option {
     color: black;
+}
+
+.map-marker {
+    display: inline-block;
+    position:absolute;
+    margin-left: -115px;
+    border-radius: 50% 50% 50% 0;
+    border: 3px solid #d62828;
+    width: 20px;
+    height: 20px;
+    transform: rotate(-45deg);
+}
+
+.map-marker::after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    margin-left: -5px;
+    margin-top: -5px;
+    background-color: #d62828;
 }
 
 #sentenceInput #adresse::placeholder{
