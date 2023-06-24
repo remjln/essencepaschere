@@ -18,6 +18,12 @@ export class ResultElementComponent implements OnInit{
       .subscribe(data => {
         if (data[0]?.address?.amenity !== undefined && data[0]?.address?.amenity !== '')
           this.data.address = data[0].address.amenity;
+        else if (data[0]?.extratags?.operator !== undefined && data[0]?.extratags?.operator !== '')
+          this.data.address = data[0].extratags.operator;
+        else if (data[0]?.namedetails?.name !== undefined && data[0]?.namedetails?.name !== '')
+          this.data.address = data[0].namedetails.name;
+        else if (data[0]?.namedetails?.brand !== undefined && data[0]?.namedetails?.brand !== '')
+          this.data.address = data[0].namedetails.brand;
       });
   }
 

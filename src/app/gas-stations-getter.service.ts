@@ -6,7 +6,7 @@ import {GeoCoordinates} from "./geo-coordinates";
 
 const FUEL_BASE_URL: string = 'https://data.economie.gouv.fr/api/records/1.0/search/?dataset=prix-des-carburants-en-france-flux-instantane-v2&q=&rows=10&sort=-dist&refine.carburants_disponibles={0}&geofilter.distance={1},{2},50000';
 const ADDR_BASE_URL: string = 'https://nominatim.openstreetmap.org/search?q={0}&format=json&limit=1';
-const STATION_BASE_URL: string = 'https://nominatim.openstreetmap.org/search?q=[fuel]{0},{1}&format=json&limit=1&addressdetails=1';
+const STATION_BASE_URL: string = 'https://nominatim.openstreetmap.org/search?q=[fuel]{0},{1}&format=json&limit=1&addressdetails=1&extratags=1&namedetails=1';
 
 @Injectable()
 export class GasStationsGetterService {
