@@ -4,8 +4,9 @@ import {GasStationData} from "./gas-station-data";
 import {HttpClient} from "@angular/common/http";
 import {GeoCoordinates} from "./geo-coordinates";
 
-const FUEL_BASE_URL: string = 'https://data.economie.gouv.fr/api/records/1.0/search/?dataset=prix-des-carburants-en-france-flux-instantane-v2&q=&rows=10&refine.carburants_disponibles={0}&geofilter.distance={1},{2},50000';
-const ADDR_BASE_URL: string = 'https://nominatim.openstreetmap.org/search?q={0}&format=json';
+const FUEL_BASE_URL: string = 'https://data.economie.gouv.fr/api/records/1.0/search/?dataset=prix-des-carburants-en-france-flux-instantane-v2&q=&rows=10&sort=-dist&refine.carburants_disponibles={0}&geofilter.distance={1},{2},50000';
+const ADDR_BASE_URL: string = 'https://nominatim.openstreetmap.org/search?q={0}&format=json&limit=1';
+const STATION_BASE_URL: string = 'https://nominatim.openstreetmap.org/search?q=[fuel]{0},{1}&format=json&limit=1&addressdetails=1';
 
 @Injectable()
 export class GasStationsGetterService {
@@ -16,10 +17,16 @@ export class GasStationsGetterService {
     return this.http.get(ADDR_BASE_URL.replace('{0}', address));
   }
 
+  requestStationName(position: GeoCoordinates): Observable<any> {
+    let url = STATION_BASE_URL
+      .replace('{0}', position.latitude.toString())
+      .replace('{1}', position.longitude.toString())
+    return this.http.get(url);
+  }
+
   formatAddressData(data: any): GeoCoordinates {
-    const boundingbox = data[0].boundingbox;
-    const latitude = boundingbox[0];
-    const longitude = boundingbox[2];
+    const latitude = data[0].lat;
+    const longitude = data[0].lon;
     return {longitude, latitude};
   }
 
@@ -28,7 +35,6 @@ export class GasStationsGetterService {
       .replace('{0}', gasType)
       .replace('{1}', position.latitude.toString())
       .replace('{2}', position.longitude.toString())
-    console.log(url)
 
     return this.http.get(url);
   }

@@ -6,7 +6,7 @@ import {MapResultsComponent} from "../map-results/map-results.component";
 @Component({
   selector: 'app-results-handler',
   templateUrl: './results-handler.component.html',
-  styleUrls: ['./results-handler.component.css']
+  styleUrls: ['./results-handler.component.css'],
 })
 export class ResultsHandlerComponent implements OnInit{
   @ViewChild(MapResultsComponent) mapResultsComponent: MapResultsComponent | undefined;

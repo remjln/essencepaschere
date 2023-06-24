@@ -4,7 +4,7 @@ import {
   ElementRef,
   ViewChild
 } from '@angular/core';
-import {Map, latLng, MapOptions, tileLayer, marker, LatLng, circle} from "leaflet";
+import {Map, latLng, MapOptions, tileLayer, marker, LatLng, circle, Icon, icon} from "leaflet";
 
 @Component({
   selector: 'app-map-results',
@@ -44,7 +44,15 @@ export class MapResultsComponent implements AfterViewInit {
   }
 
   addMarker(lat: number, lng: number, title: string) {
-    const newMarker = marker([lat, lng], {title: title});
+    const newMarker = marker([lat, lng], {
+      title: title,
+      icon: icon({
+        ...Icon.Default.prototype.options,
+        iconUrl: 'assets/marker-icon.png',
+        iconRetinaUrl: 'assets/marker-icon-2x.png',
+        shadowUrl: 'assets/marker-shadow.png'
+      })
+    });
     newMarker.addTo(this.map);
   }
 }

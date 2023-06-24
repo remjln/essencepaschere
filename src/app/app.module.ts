@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ResultListComponent } from './result-list/result-list.component';
 import { ResultElementComponent } from './result-element/result-element.component';
@@ -10,6 +9,8 @@ import { SentenceInputHeaderComponent } from './sentence-input-header/sentence-i
 import { MapResultsComponent } from './map-results/map-results.component';
 import { LeafletModule} from "@asymmetrik/ngx-leaflet";
 import { ResultsHandlerComponent } from './results-handler/results-handler.component';
+import {HttpClientModule} from "@angular/common/http";
+import {GasStationsGetterService} from "./gas-stations-getter.service";
 
 @NgModule({
   declarations: [
@@ -24,10 +25,10 @@ import { ResultsHandlerComponent } from './results-handler/results-handler.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    HttpClientModule,
     LeafletModule
   ],
-  providers: [],
+  providers: [GasStationsGetterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
