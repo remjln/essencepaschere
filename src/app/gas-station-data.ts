@@ -4,4 +4,5 @@ export interface GasStationData {
     distance: number;
     price: number;
     address: string;
+    name: string;
 }

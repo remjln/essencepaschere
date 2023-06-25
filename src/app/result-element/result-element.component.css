@@ -8,7 +8,7 @@
 .leftPart {
   display: block;
   height: 100%;
-  width: 80%;
+  width: 75%;
   padding-left: 1em;
 }
 
@@ -16,12 +16,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 20%;
+  width: 25%;
   height: 100%;
   padding-right: 1em;
 }
 
 h3 {
+  display: inline-block;
   font-family: Arial, sans-serif;
   font-weight: normal;
 }
@@ -33,14 +34,26 @@ h3 {
 }
 
 #name {
-  font-size: larger;
+  margin-right: 5px;
+  font-size: x-large;
+  font-weight: 600;
   margin-bottom: 0;
+}
+
+#address {
+  font-size: large;
+  font-weight: 400;
+}
+
+#distance {
+  font-weight: 600;
+  margin-bottom: 0;
+  color: #00000070;
 }
 
 p {
   font-family: Arial, sans-serif;
   margin-top: 5px;
   font-size: medium;
-  font-weight: 600;
   color: #00000070;
 }

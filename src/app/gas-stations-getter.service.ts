@@ -52,7 +52,8 @@ export class GasStationsGetterService {
       let distance: number = Math.round((+r.fields.dist) / 10) / 100;
       let price: number = +r.fields[fuel_lower + "_prix"];
       let address: string = r.fields.adresse;
-      res.push({longitude, latitude, distance, price, address});
+      let name: string = r.fields.adresse;
+      res.push({longitude, latitude, distance, price, address, name});
     }
 
     res.sort((a, b) => a.price - b.price);
