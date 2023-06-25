@@ -1,4 +1,5 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import {ResultsHandlerComponent} from "./results-handler/results-handler.component";
 
 @Component({
   selector: 'app-root',
@@ -7,11 +8,10 @@ import {Component, ElementRef, ViewChild} from '@angular/core';
 })
 export class AppComponent {
   title = 'project';
-  // @ts-ignore
   fuelType: string = '';
-  // @ts-ignore
   address: string = '';
   showResults = false;
+  @ViewChild('resultsHandler') resultsHandler : ResultsHandlerComponent;
 
   addressInput(address: string) {
     this.address = address.trim();
@@ -23,5 +23,9 @@ export class AppComponent {
 
   downCaretClick() {
     this.showResults = true;
+  }
+
+  refreshResults() {
+    this.resultsHandler.updateGasResults();
   }
 }

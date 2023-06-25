@@ -2,11 +2,11 @@
     <app-sentence-input (addressEventEmitter)="addressInput($event)" (fuelTypeEventEmitter)="fuelSelect($event)"></app-sentence-input>
     <a *ngIf="fuelType !== '' && address !== ''" id="search" (click)="downCaretClick()">
       <span class="caret"></span>
-       Chercher 
+       Chercher
       <span class="caret"></span>
     </a>
 </section>
 <section id="results" *ngIf="showResults">
-    <app-sentence-input-header [address]="address" [fuelType]="fuelType"></app-sentence-input-header>
-    <app-results-handler [address]="address" [fuelType]="fuelType" ></app-results-handler>
+    <app-sentence-input-header (searchEmitter)="refreshResults()" (addressEventEmitter)="addressInput($event)" (fuelTypeEventEmitter)="fuelSelect($event)" [address]="address" [fuelType]="fuelType"></app-sentence-input-header>
+    <app-results-handler #resultsHandler [address]="address" [fuelType]="fuelType" ></app-results-handler>
 </section>

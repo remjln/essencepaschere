@@ -1,18 +1,18 @@
 <div id="sentenceInput">
-    <h2>Je cherche du </h2>
-    <select id="carburant" (change)="carburantSelect($event)">
-        <option value="">carburant</option>
-        <option value="SP95">SP95</option>
-        <option value="Gazole">Gazole</option>
-        <option value="E85">E85</option>
-        <option value="GPLc">GPLc</option>
-        <option value="E10">E10</option>
-        <option value="SP98">SP98</option>
-    </select>
-    <h2 id="carburant-color" (change)="carburantSelect($event)"> ⬤</h2>
-    <br>
-    <h2>à </h2>
-    <div class="map-marker"></div>
-    <input id="adresse" (input)="addressInput($event)" type="text" placeholder="Lyon..." size="13">
+  <h2>Je cherche du </h2>
+  <select id="carburant" (change)="carburantSelect($event)">
+    <option value="" style="color: #00000050">carburant</option>
+    <option value="SP95" style="color: #004C26">SP95</option>
+    <option value="Gazole" style="color: #F5871E">Gazole</option>
+    <option value="E85" style="color: #2BBED7">E85</option>
+    <option value="GPLc" style="color: #1A6C8D">GPLc</option>
+    <option value="E10" style="color: #56BA48">E10</option>
+    <option value="SP98" style="color: #004C26">SP98</option>
+  </select>
+  <h2 id="carburant-color">&nbsp;⬤</h2>
+  <br>
+  <div class="map-marker"></div>
+  <h2> à </h2>
+  <input id="adresse" (input)="addressInput($event)" type="text" placeholder="Lyon..." size="13">
 </div>
 

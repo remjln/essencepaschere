@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-sentence-input-header',
@@ -8,23 +8,20 @@ import {Component, Input, OnInit} from '@angular/core';
 export class SentenceInputHeaderComponent {
   @Input() address = '';
   @Input() fuelType = '';
+  @Output() addressEventEmitter = new EventEmitter<string>();
+  @Output() fuelTypeEventEmitter = new EventEmitter<string>();
+  @Output() searchEmitter = new EventEmitter<string>();
 
-    carburantSelect(event: any) {
-      if (event.target.value === '')
-        event.target.style.color = '#00000050';
-      else if (event.target.value === 'SP95')
-        event.target.style.color = '#004C26';
-      else if (event.target.value === 'Gazole')
-        event.target.style.color = '#F5871E';
-      else if (event.target.value === 'E85')
-        event.target.style.color = '#2BBED7';
-      else if (event.target.value === 'GPLc')
-        event.target.style.color = '#1A6C8D';
-      else if (event.target.value === 'E10')
-        event.target.style.color = '#56BA48';
-      else if (event.target.value === 'SP98')
-        event.target.style.color = '#004C26';
-      else
-        event.target.style.color = 'black';
-    }
+  carburantSelect(event: any) {
+    event.target.setAttribute('data-fuel', event.target.value);
+    this.fuelTypeEventEmitter.emit(event.target.value);
+  }
+
+  addressInput(event: any) {
+    this.addressEventEmitter.emit(event.target.value);
+  }
+
+  search() {
+    this.searchEmitter.emit();
+  }
 }

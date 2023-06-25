@@ -1,74 +1,97 @@
-div#sentenceInput{
-    /*border: solid 1px orange;*/
-    display: inline-block;
-    text-align: center;
+div#sentenceInput {
+  /*border: solid 1px orange;*/
+  display: inline-block;
+  text-align: center;
 }
 
 #sentenceInput h2 {
-    display: inline;
+  display: inline;
 
-    font-family: Arial, sans-serif;
-    font-size: 3em;
-    font-weight: normal;
+  font-family: Arial, sans-serif;
+  font-size: 3em;
+  font-weight: normal;
 }
 
 #sentenceInput #carburant-color {
-    color: #00000050;
+  color: #00000050;
 }
 
 #sentenceInput #carburant {
-    color: #00000050;
+  color: #00000050;
 
-    border: none;
-    background: none;
+  border: none;
+  background: none;
 
-    font-family: Arial, sans-serif;
-    font-size: 3em;
+  font-family: Arial, sans-serif;
+  font-size: 3em;
 
-    border-bottom: solid 2px #d62828;
+  border-bottom: solid 2px #d62828;
+}
+
+#sentenceInput[data-fuel='SP95'] #carburant, #sentenceInput[data-fuel='SP95'] #carburant-color {
+  color: #004C26;
+}
+
+#sentenceInput[data-fuel='Gazole'] #carburant, #sentenceInput[data-fuel='Gazole'] #carburant-color {
+  color: #F5871E;
+}
+
+#sentenceInput[data-fuel='E85'] #carburant, #sentenceInput[data-fuel='E85'] #carburant-color {
+  color: #2BBED7;
+}
+
+#sentenceInput[data-fuel='GPLc'] #carburant, #sentenceInput[data-fuel='GPLc'] #carburant-color {
+  color: #1A6C8D;
+}
+
+#sentenceInput[data-fuel='E10'] #carburant, #sentenceInput[data-fuel='E10'] #carburant-color {
+  color: #56BA48;
+}
+
+#sentenceInput[data-fuel='SP98'] #carburant, #sentenceInput[data-fuel='SP98'] #carburant-color {
+  color: #004C26;
 }
 
 #sentenceInput #carburant option {
-    color: black;
+  color: black;
+  font-size: .5em;
 }
 
 .map-marker {
-    display: inline-block;
-    position:absolute;
-    margin-left: -115px;
-    border-radius: 50% 50% 50% 0;
-    border: 3px solid #d62828;
-    width: 20px;
-    height: 20px;
-    transform: rotate(-45deg);
+  display: inline-block;
+  border-radius: 50% 50% 50% 0;
+  border: 3px solid #d62828;
+  width: 1.5em;
+  height: 1.5em;
+  transform: translateY(-10%) rotate(-45deg);
 }
 
 .map-marker::after {
-    position: absolute;
-    content: '';
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    margin-left: -5px;
-    margin-top: -5px;
-    background-color: #d62828;
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin-left: -5px;
+  margin-top: -5px;
+  background-color: #d62828;
 }
 
-#sentenceInput #adresse::placeholder{
-    color: #00000050;
+#sentenceInput #adresse::placeholder {
+  color: #00000050;
 }
 
-#sentenceInput #adresse{
+#sentenceInput #adresse {
 
-    border: none;
-    background: none;
+  border: none;
+  background: none;
 
-    font-family: Arial, sans-serif;
-    font-size: 3em;
+  font-family: Arial, sans-serif;
+  font-size: 3em;
 
-    border-bottom: solid 2px #d62828;
+  border-bottom: solid 2px #d62828;
 }
 
 

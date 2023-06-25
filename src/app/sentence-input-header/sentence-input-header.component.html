@@ -1,18 +1,17 @@
 <div id="inputHeader">
-    <h2>Je cherche du </h2>
-    <select id="carburant" (change)="carburantSelect($event)" [value]="fuelType">
-        <option value="">carburant</option>
-        <option value="SP95">SP95</option>
-        <option value="Gazole">Gazole</option>
-        <option value="E85">E85</option>
-        <option value="GPL">GPL</option>
-        <option value="E10">E10</option>
-        <option value="SP98">SP98</option>
-    </select>
-    <h2> à </h2>
-    <input id="adresse" type="text" placeholder="Lyon..." size="15" [value]="address">
-    <a *ngIf="fuelType !== '' && address !== ''" id="search">
-       Chercher 
-    </a>
+  <h2>Je cherche du </h2>
+  <select id="carburant" (change)="carburantSelect($event)" [value]="fuelType" [attr.data-fuel]="fuelType">
+    <option value="SP95" style="color: #004C26">SP95</option>
+    <option value="Gazole" style="color: #F5871E">Gazole</option>
+    <option value="E85" style="color: #2BBED7">E85</option>
+    <option value="GPLc" style="color: #1A6C8D">GPLc</option>
+    <option value="E10" style="color: #56BA48">E10</option>
+    <option value="SP98" style="color: #004C26">SP98</option>
+  </select>
+  <h2> à </h2>
+  <input (input)="addressInput($event)" id="adresse" type="text" placeholder="Lyon..." size="15" [value]="address">
+  <a id="search" (click)="search()">
+    Chercher
+  </a>
 </div>
 
