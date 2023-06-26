@@ -24,27 +24,27 @@
   border-bottom: solid 2px #d62828;
 }
 
-#inputHeader #carburant[data-fuel='SP95'] {
+#inputHeader[data-fuel='SP95'] #carburant, #inputHeader[data-fuel='SP95'] #carburant-color {
   color: #004C26;
 }
 
-#inputHeader #carburant[data-fuel='Gazole'] {
+#inputHeader[data-fuel='Gazole'] #carburant, #inputHeader[data-fuel='Gazole'] #carburant-color {
   color: #F5871E;
 }
 
-#inputHeader #carburant[data-fuel='E85'] {
+#inputHeader[data-fuel='E85'] #carburant, #inputHeader[data-fuel='E85'] #carburant-color {
   color: #2BBED7;
 }
 
-#inputHeader #carburant[data-fuel='GPLc'] {
+#inputHeader[data-fuel='GPLc'] #carburant, #inputHeader[data-fuel='GPLc'] #carburant-color {
   color: #1A6C8D;
 }
 
-#inputHeader #carburant[data-fuel='E10'] {
+#inputHeader[data-fuel='E10'] #carburant, #inputHeader[data-fuel='E10'] #carburant-color {
   color: #56BA48;
 }
 
-#inputHeader #carburant[data-fuel='SP98'] {
+#inputHeader[data-fuel='SP98'] #carburant, #inputHeader[data-fuel='SP98'] #carburant-color {
   color: #004C26;
 }
 
@@ -58,6 +58,7 @@
 }
 
 #inputHeader #adresse {
+  margin-left: 10px;
 
   border: none;
   background: none;
@@ -81,4 +82,27 @@
 
 #search:hover {
   color: #00000090;
+}
+
+
+.map-marker {
+  display: inline-block;
+  border-radius: 50% 50% 50% 0;
+  border: 3px solid #d62828;
+  width: 1em;
+  height: 1em;
+  transform: translateY(-10%) rotate(-45deg);
+}
+
+.map-marker::after {
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin-left: -5px;
+  margin-top: -5px;
+  background-color: #d62828;
 }

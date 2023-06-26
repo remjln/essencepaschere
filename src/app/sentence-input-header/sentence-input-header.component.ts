@@ -13,7 +13,7 @@ export class SentenceInputHeaderComponent {
   @Output() searchEmitter = new EventEmitter<string>();
 
   carburantSelect(event: any) {
-    event.target.setAttribute('data-fuel', event.target.value);
+    this.fuelType = event.target.value;
     this.fuelTypeEventEmitter.emit(event.target.value);
   }
 

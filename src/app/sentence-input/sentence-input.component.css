@@ -84,7 +84,7 @@ div#sentenceInput {
 }
 
 #sentenceInput #adresse {
-
+  margin-left: 15px;
   border: none;
   background: none;
 
