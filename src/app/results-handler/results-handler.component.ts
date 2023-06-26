@@ -8,7 +8,7 @@ import {MapResultsComponent} from "../map-results/map-results.component";
   templateUrl: './results-handler.component.html',
   styleUrls: ['./results-handler.component.css'],
 })
-export class ResultsHandlerComponent implements OnInit {
+export class ResultsHandlerComponent  {
   @ViewChild(MapResultsComponent) mapResultsComponent: MapResultsComponent | undefined;
   @Input() address: string = '';
   @Input() fuelType: string = '';
@@ -19,15 +19,14 @@ export class ResultsHandlerComponent implements OnInit {
     this.gasService = gasStationsGetterService;
   }
 
-  ngOnInit(): void {
-    this.updateGasResults();
-  }
 
-  updateGasResults() {
+
+  updateGasResults(callback:Function) {
     this.gasService.requestAddressData(this.address).subscribe((data: any) => {
       const position = this.gasService.formatAddressData(data);
       this.gasService.requestStationData(this.fuelType, position).subscribe((data: any) => {
         this.gasResults = this.gasService.formatStationData(data, this.fuelType);
+        let toDo = this.gasResults.length;
         for (const gasResult of this.gasResults) {
           this.gasService.requestStationName({longitude: gasResult.longitude, latitude: gasResult.latitude})
             .subscribe(data => {
@@ -58,6 +57,8 @@ export class ResultsHandlerComponent implements OnInit {
                 gasResult.name = data[0].namedetails.brand;
 
               this.mapResultsComponent?.updateMarkers();
+              if(--toDo === 0)
+                callback();
             });
         }
       });

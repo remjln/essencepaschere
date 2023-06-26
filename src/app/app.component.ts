@@ -11,6 +11,7 @@ export class AppComponent {
   fuelType: string = '';
   address: string = '';
   showResults = false;
+  showWait = false;
   @ViewChild('resultsHandler') resultsHandler : ResultsHandlerComponent;
 
   addressInput(address: string) {
@@ -22,10 +23,18 @@ export class AppComponent {
   }
 
   downCaretClick() {
-    this.showResults = true;
+    this.refreshResults();
   }
 
   refreshResults() {
-    this.resultsHandler.updateGasResults();
+    this.showWait = true;
+    this.resultsHandler.updateGasResults(() => {
+      this.showResults = true;
+      this.showWait = false;
+    });
+  }
+
+  searchAgainClick() {
+    setTimeout(() => this.refreshResults(), 200);
   }
 }

@@ -61,3 +61,36 @@ section {
 .disabled-link {
   pointer-events: none;
 }
+
+#wait {
+  position: absolute;
+  top: 100vh;
+  transition: top ease-in-out .2s;
+  background: #d62828;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#wait h1 {
+  text-align: center;
+  font-size: 4em;
+  font-family: Arial, sans-serif;
+  color: #e9ecef;
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: .1em;
+  margin-bottom: 0;
+}
+
+#wait p {
+  font-family: Arial, sans-serif;
+  color: #e9ecef;
+  font-size: 2em;
+  text-align: center;
+}
+#wait[data-show=true] {
+  top: 0;
+}

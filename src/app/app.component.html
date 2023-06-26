@@ -6,7 +6,11 @@
       <span class="caret"></span>
     </a>
 </section>
-<section id="results" *ngIf="showResults">
-    <app-sentence-input-header (searchEmitter)="refreshResults()" (addressEventEmitter)="addressInput($event)" (fuelTypeEventEmitter)="fuelSelect($event)" [address]="address" [fuelType]="fuelType"></app-sentence-input-header>
+<section id="results">
+    <app-sentence-input-header (searchEmitter)="searchAgainClick()" (addressEventEmitter)="addressInput($event)" (fuelTypeEventEmitter)="fuelSelect($event)" [address]="address" [fuelType]="fuelType"></app-sentence-input-header>
     <app-results-handler #resultsHandler [address]="address" [fuelType]="fuelType" ></app-results-handler>
+</section>
+<section id="wait" [attr.data-show]="showWait">
+  <h1>Une seconde</h1>
+  <p>Nous chercons les stations les moins chères...</p>
 </section>
